@@ -1,15 +1,8 @@
-<h1>Create a new Article</h1>
+<div class="container">
+    <h1>Create a new Article</h1>
 
-<%= form_with scope: :article, local: true, url: articles_path do |f| %>
-<div>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= render 'form' %>
+
+    <%= link_to 'Back', articles_path, class: 'btn btn-outline-primary btn-sm mt-5' %>
+
 </div>
-<div>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-</div>
-<div>
-    <%= f.submit %>
-</div>
-<% end %>
