@@ -38,9 +38,9 @@ class ArticlesController < ApplicationController
 
       if @article.save
         redirect_to @article
+      else
+        render 'new'
       end
-      
-      render 'new'
     end
 
     private

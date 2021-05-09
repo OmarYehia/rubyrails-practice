@@ -1,8 +1,11 @@
-<div class="container">
-    <h1>Create a new Article</h1>
-
-    <%= render 'form' %>
-
-    <%= link_to 'Back', articles_path, class: 'btn btn-outline-primary btn-sm mt-5' %>
-
+<div class="container mt-4 d-flex flex-column align-items-center justify-content-center border p-4 w-75">
+    <div class="d-flex" style="width: 600px">
+        <h1>Create a new Article</h1>
+        <div class="ms-auto">
+            <%= link_to 'Back', articles_path, class: 'btn btn-outline-primary btn-sm' %>
+        </div>
+    </div>
+    <div class="edit-form mt-5" style="width: 600px">
+        <%= render 'form' %>
+    </div>
 </div>
