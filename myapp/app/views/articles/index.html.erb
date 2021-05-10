@@ -2,25 +2,25 @@
     <div class="" style="width: 600px">
         <h1 class="mb-4">List of articles</h1>
         <table class="table table-striped table-hover">
-        <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Text</th>
-            <th scope="col" class="text-center">Actions</th>
-        </tr>
-        
-        <% @articles.each do |article| %>
             <tr>
-            <td><%= article.title %></td>
-            <td><%= article.text %></td>
-            <td class="d-flex justify-content-center">
-                <%= link_to 'Show', article_path(article), class: 'btn btn-primary btn-sm ms-2'%>
-                <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-secondary btn-sm ms-2'%>
-                <%= link_to 'Destroy', article_path(article),
+                <th scope="col">Title</th>
+                <th scope="col">Text</th>
+                <th scope="col" class="text-center">Actions</th>
+            </tr>
+
+            <% @articles.each do |article| %>
+            <tr>
+                <td><%= article.title %></td>
+                <td><%= article.text %></td>
+                <td class="d-flex justify-content-center">
+                    <%= link_to 'Show', article_path(article), class: 'btn btn-primary btn-sm ms-2'%>
+                    <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-secondary btn-sm ms-2'%>
+                    <%= link_to 'Destroy', article_path(article),
                 method: :delete,
                 data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm ms-2'%>
-            </td>
+                </td>
             </tr>
-        <% end %>
+            <% end %>
         </table>
 
         <% if user_signed_in? %>
