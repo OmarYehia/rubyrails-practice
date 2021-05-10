@@ -1,15 +1,15 @@
 <div class="comment-list">
-<div class="card mb-2 shadow-sm">
-  <div class="card-body">
-    <div class="card-title d-flex align-items-center">
-      <p class="" style="font-size: 12px">@<%= comment.commenter %> said:</p>
-      <% if current_user.email == comment.commenter %>
-      <%= link_to 'Delete Comment', [comment.article, comment],
+    <div class="card mb-2 shadow-sm">
+        <div class="card-body">
+            <div class="card-title d-flex align-items-center">
+                <p class="" style="font-size: 12px">@<%= comment.commenter %> said:</p>
+                <% if current_user.email == comment.commenter %>
+                <%= link_to 'Delete Comment', [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm ms-auto' %>
-      <% end %>
+                <% end %>
+            </div>
+            <p class="card-text"><%= comment.body %></p>
+        </div>
     </div>
-    <p class="card-text"><%= comment.body %></p>
-  </div>
-</div>
 </div>
